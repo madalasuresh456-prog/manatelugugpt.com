@@ -1,40 +1,52 @@
-<!DOCTYPE html><html lang="te"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mana Telugu GPT</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#212121;color:#ececec;font-family:system-ui;min-height:100vh;display:flex;flex-direction:column}header{padding:12px 16px;background:#171717;border-bottom:1px solid #2f2f2f;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:10}.logo{width:30px;height:30px;background:#fff;border-radius:50%;display:grid;place-items:center;color:#000;font-weight:900}.t{font-size:14px;font-weight:700}.s{font-size:10px;opacity:.5}.chat{flex:1;max-width:800px;width:100%;margin:0 auto;padding-bottom:140px}.msg{padding:18px 16px;display:flex;gap:12px;border-bottom:1px solid #ffffff08}.av{width:26px;height:26px;border-radius:50%;flex:0 0 26px;display:grid;place-items:center;font-size:11px;font-weight:700}.u.av{background:#5436DA;color:#fff}.b.av{background:#19c37d;color:#fff}.tx{flex:1;line-height:1.7;font-size:14.5px;white-space:pre-wrap;word-break:break-word}.wel{padding:40px 20px;text-align:center}.qs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:600px;margin:20px auto}.qs button{padding:8px 12px;border-radius:20px;border:1px solid #333;background:#222;color:#ddd;font-size:11px;cursor:pointer}.inp{position:fixed;bottom:0;left:0;right:0;background:#212121;padding:12px 14px;border-top:1px solid #222}.box{max-width:800px;margin:0 auto;background:#1e1e1e;border-radius:28px;display:flex;align-items:center;padding:5px 5px 5px 16px;gap:8px}.box input{flex:1;background:transparent;border:none;color:#fff;outline:none;font-size:14px;padding:7px 0}.box button{width:30px;height:30px;border-radius:50%;border:none;background:#fff;color:#000;cursor:pointer;font-weight:700}</style></head><body><header><div class="logo">తె</div><div><div class="t">మన తెలుగు GPT</div><div class="s">No Block • Ultra Fast • Free</div></div></header><div class="chat" id="chat"><div class="wel" id="wel"><h2>నమస్తే మామా! 🙏</h2><p style="opacity:.6;font-size:13px">Network Busy ledu - Pakka answer vastundi!</p><div class="qs"><button onclick="ask('పైథాన్ నేర్చుకోవడం ఎలా')">💻 Python</button><button onclick="ask('పఠాన్ సినిమా గురించి చెప్పు')">🎬 పఠాన్</button><button onclick="ask('బిర్యానీ రెసిపీ')">🍛 బిర్యానీ</button><button onclick="ask('UPSC ఎలా ప్రిపేర్ అవ్వాలి')">📚 UPSC</button></div></div></div><div class="inp"><div class="box"><input id="inp" placeholder="Adugu mama - pakka answer!"><button onclick="send()">↑</button></div></div><script>
+<!DOCTYPE html><html lang="te"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mana Telugu GPT - World Knowledge</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#212121;color:#ececec;font-family:system-ui;min-height:100vh;display:flex;flex-direction:column}header{padding:12px 16px;background:#171717;border-bottom:1px solid #2f2f2f;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:10}.logo{width:30px;height:30px;background:#fff;border-radius:50%;display:grid;place-items:center;color:#000;font-weight:900}.t{font-size:14px;font-weight:700}.s{font-size:10px;opacity:.5}.chat{flex:1;max-width:780px;width:100%;margin:0 auto;padding-bottom:140px}.msg{padding:18px 16px;display:flex;gap:12px;border-bottom:1px solid #ffffff08}.av{width:26px;height:26px;border-radius:50%;flex:0 0 26px;display:grid;place-items:center;font-size:11px;font-weight:700}.u.av{background:#5436DA;color:#fff}.b.av{background:#19c37d;color:#fff}.tx{flex:1;line-height:1.75;font-size:14.5px;white-space:pre-wrap;word-break:break-word}.tx b{color:#fff}.wel{padding:40px 20px;text-align:center}.qs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:600px;margin:20px auto}.qs button{padding:8px 12px;border-radius:20px;border:1px solid #333;background:#222;color:#ddd;font-size:11px;cursor:pointer}.inp{position:fixed;bottom:0;left:0;right:0;background:#212121;padding:12px 14px;border-top:1px solid #222}.box{max-width:780px;margin:0 auto;background:#1e1e1e;border-radius:28px;display:flex;align-items:center;padding:5px 5px 5px 16px;gap:8px}.box input{flex:1;background:transparent;border:none;color:#fff;outline:none;font-size:14px;padding:7px 0}.box button{width:30px;height:30px;border-radius:50%;border:none;background:#fff;color:#000;cursor:pointer;font-weight:800}</style></head><body><header><div class="logo">తె</div><div><div class="t">మన తెలుగు GPT</div><div class="s">World Knowledge • One Prompt • Free</div></div></header><div class="chat" id="chat"><div class="wel" id="wel"><h2>నమస్తే మామా! 🙏</h2><p style="opacity:.6;font-size:13px">World lo em adigina - okkate prompt tho answer!</p><div class="qs"><button onclick="ask('జనసేన పార్టీ గురించి చెప్పు')">🚩 జనసేన</button><button onclick="ask('బ్లాక్ హోల్ అంటే ఏమిటి')">🌌 Black Hole</button><button onclick="ask('పైథాన్ నేర్చుకోవడం ఎలా')">💻 Python</button><button onclick="ask('అమెరికా రాజధాని ఏమిటి')">🌍 World</button><button onclick="ask('ప్రేమ అంటే ఏమిటి')">❤️ Love</button></div></div></div><div class="inp"><div class="box"><input id="inp" placeholder="World lo em adigina adugu mama..."><button onclick="send()">↑</button></div></div><script>
 const chat=document.getElementById('chat'),inp=document.getElementById('inp'),wel=document.getElementById('wel');
-const BACKUP={
-"python":`💻 **పైథాన్ నేర్చుకోవడం ఎలా మామా?**\n\nమామా పైథాన్ అంటే ప్రపంచంలోనే EASIEST లాంగ్వేజ్!\n\n**Step 1: Install:**\npython.org lo ki velli Python install chey\n\n**Step 2: First Code:**\n\`\`python\nprint("Hello Mama!")\nname = input("Nee peru enti? ")\nprint(f"Namaste {name} mama!")\n\`\`\n\n**Step 3: 30 Rojula Plan:**\n• Day 1-7: Basics - variables, print\n• Day 8-15: Loops, if-else\n• Day 16-25: YouTube - Telugu Computer World\n• Day 26-30: Project - Calculator\n\n**Jobs:** Nela ki 1-2 lakhs salary mama! Google, YouTube, Instagram anni Python thone!\n\n🚀 Rojoo 1 ganta - 30 rojullo expert mama!`,
-"pathan":`🎬 **పఠాన్ సినిమా - పూర్తి వివరాలు మామా!**\n\n**పఠాన్** - 2023 lo vachina Shah Rukh Khan blockbuster movie mama!\n\n**Details:**\n• Hero: Shah Rukh Khan, Deepika Padukone, John Abraham\n• Director: Siddharth Anand\n• Budget: 250 crores, Collection: 1050+ crores!\n• Story: Indian spy Pathan, Pakistan lo mission\n• Action, Thriller - YRF Spy Universe movie\n\n**Hit Songs:**\n• Besharam Rang\n• Jhoome Jo Pathaan\n\n**Chudaledha mama?** Amazon Prime lo undi - pakka chudu - full action! 🔥\n\nSRK comeback movie mama - super hit!`,
-"biryani":`🍛 **హైదరాబాదీ బిర్యానీ రెసిపీ మామా!**\n\n**Kavali:**\n• Basmati rice 1kg, Chicken 1kg\n• Perugu 400g, Ullipayalu 4\n• Allam velluli paste 3 spoons\n• Biryani masala, karam, uppu, neyyi\n\n**Cheyadam:**\n1. Chicken ki perugu, masala patty 2 hours marinate\n2. Rice 70% varaku udikinchu\n3. Pedda patralo kinda chicken, paina rice, madyalo veyinchina ullipayalu, kothimeera, pudina, neyyi - layers\n4. Moota meeda pindi tho seal chesi low flame lo 45 min dum\n\n🔥 Ghumaghumalade Biryani ready mama!`,
-"upsc":`📚 **UPSC - IAS/IPS ela avvali mama?**\n\n**UPSC ante:** Union Public Service Commission - India lo highest govt exams!\n\n**Jobs:**\n• IAS - Collector\n• IPS - Police Officer\n• IFS, IRS\n\n**Ela chadavali:**\n1. NCERT 6-12 books\n2. The Hindu paper daily\n3. Rojoo 8 hours chaduv\n4. Mock tests\n\nMama kashtapadithe IAS pakka avthav! 💪`
-};
 function ask(t){inp.value=t;send()}
 function add(r,t,h){let d=document.createElement('div');d.className='msg '+r;d.innerHTML=`<div class="av">${r==='u'?'M':'AI'}</div><div class="tx">${h?t:t.replace(/</g,'&lt;')}</div>`;chat.appendChild(d);window.scrollTo(0,document.body.scrollHeight);return d.querySelector('.tx');}
-function clean(t){return t.replace(/\*\*(.*?)\*\*/g,'<b>$1</b>').replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>');}
+function clean(txt){return txt.replace(/---+/g,'').replace(/##\s*\d*\.?\s*/g,'').replace(/##\s*/g,'').replace(/\|\s*.*\s*\|/g,'').replace(/\*\*(.*?)\*\*/g,'<b>$1</b>').replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>');}
 
-async function getFastAnswer(q){
-let prompt=`You are Mana Telugu GPT. You are friendly, you call user mama. Answer in Telugu (Telugu script mixed with English technical words). Question: ${q}. Give detailed helpful answer in Telugu like ChatGPT, friendly, detailed.`;
+// WORLD UNIVERSAL SYSTEM PROMPT - OKKATE PROMPT - ANNI VISHAYALAKI!
+const WORLD_SYSTEM_PROMPT = `
+You are Mana Telugu GPT, the world's best Telugu AI. You know EVERYTHING in the world.
+
+YOUR JOB:
+- User will ask ANY question from ANY topic in the world - science, politics, movies, love, coding, history, health, food, anything.
+- You must answer in Telugu (Telugu script, with some English technical words if needed)
+- You must be accurate, friendly, call user "mama" sometimes
+- You must NOT say "I don't know" - you must try to answer everything
+- Format: Use bold headings, bullet points with •
+- NO ## symbols, NO | tables, clean ChatGPT style
+- If user asks Janasena/Jenasena - it is Pawan Kalyan's political party in AP (NOT massage point)
+- Be helpful like ChatGPT
+
+You know everything - answer any question!
+`;
+
+async function getWorldAnswer(userQuestion){
+let messages=[
+{role:'system',content:WORLD_SYSTEM_PROMPT},
+{role:'user',content:userQuestion}
+];
+
+// Try HackClub AI - FREE - WORLD KNOWLEDGE - NO LIMIT
 try{
 let res=await fetch('https://ai.hackclub.com/chat/completions',{
 method:'POST',
 headers:{'Content-Type':'application/json'},
-body:JSON.stringify({
-model:'llama-3.3-70b-versatile',
-messages:[{role:'system',content:'You are Mana Telugu GPT. Answer in Telugu language always. Be helpful and friendly.'},{role:'user',content:prompt}],
-max_tokens:1200,
-temperature:0.7
-})
+body:JSON.stringify({model:'llama-3.3-70b-versatile',messages:messages,max_tokens:2000,temperature:0.6})
 });
 if(res.ok){
 let data=await res.json();
 let ans=data.choices?.[0]?.message?.content;
-if(ans && ans.length>20) return ans;
+if(ans && ans.length>30) return ans;
 }
 }catch(e){}
 
+// Fallback 2: Pollinations
 try{
-let p=encodeURIComponent(prompt);
-let res2=await fetch(`https://text.pollinations.ai/${p}?model=openai`,{cache:'no-store'});
+let fullPrompt=WORLD_SYSTEM_PROMPT + "\n\nUser Question: " + userQuestion;
+let res2=await fetch(`https://text.pollinations.ai/${encodeURIComponent(fullPrompt)}?model=openai`,{cache:'no-store'});
 let t2=await res2.text();
-if(t2 && t2.length>20 &&!t2.includes('I’m sorry') &&!t2.includes("can't help")) return t2;
+if(t2 && t2.length>30 && !t2.includes('massage point') && !t2.includes('Auricle')) return t2;
 }catch(e){}
 
 return null;
@@ -44,25 +56,29 @@ async function send(){
 let q=inp.value.trim();if(!q)return;
 if(wel)wel.style.display='none';
 add('u',q,false);inp.value='';
-let bot=add('b','⚡ Alachistunna mama...',true);
-let ql=q.toLowerCase();
-
-let backupKey=null;
-if(ql.includes('python')||ql.includes('పైథాన్')) backupKey='python';
-else if(ql.includes('pathan')||ql.includes('పఠాన్')||ql.includes('పఠాన')) backupKey='pathan';
-else if(ql.includes('biryani')||ql.includes('బిర్యానీ')) backupKey='biryani';
-else if(ql.includes('upsc')) backupKey='upsc';
-
+let bot=add('b','🌍 World knowledge nundi alachistunna mama...',true);
 try{
-let ans=await getFastAnswer(q);
+let ans=await getWorldAnswer(q);
 if(!ans){
-if(backupKey && BACKUP[backupKey]) ans=BACKUP[backupKey];
-else ans=`మామా ❤️ **${q}** గురించి...\n\nIdi chala manchi prashna mama! ${q} gurinchi detailed ga cheptha. Konchem malli try chey mama - network konchem slow undi kani pakka answer vasthundi! 🚀`;
-}
+bot.innerHTML=clean(`మామా ❤️ "${q}" గురించి...
+
+Mama idi chala pedda vishayam - world lo idi chala important!
+
+**"${q}" gurinchi naaku telisindi:**
+World lo "${q}" ante chala mandiki interest unde topic mama. Deeni gurinchi detailed ga telusukovalante:
+
+• Google lo "${q} in Telugu" ani search chey
+• YouTube lo videos chudu
+• Books chaduvu
+
+**Kani nenu kuda nerchukuntunna mama!** Malli "${q} ante enti detailed ga" ani adugu - inka manchi answer istha!
+
+🚀 Mama network konchem slow - 1 min tarvata malli try chey - pakka world knowledge tho answer vasthundi!`);
+}else{
 bot.innerHTML=clean(ans);
+}
 }catch(e){
-if(backupKey && BACKUP[backupKey]) bot.innerHTML=clean(BACKUP[backupKey]);
-else bot.innerHTML=`మామా ❤️ ${q} gurinchi detailed answer... Malli adugu mama - pakka vasthundi! 🚀`;
+bot.innerHTML=clean(`Mama "${q}" gurinchi alachistunna... Malli adugu mama! 🚀`);
 }
 window.scrollTo(0,document.body.scrollHeight);
 }
