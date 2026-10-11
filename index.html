@@ -1,25 +1,132 @@
-<!DOCTYPE html><html lang="te"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mana Telugu GPT</title><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#212121;color:#ececec;font-family:system-ui;display:flex;flex-direction:column;min-height:100vh}header{padding:14px 16px;background:#171717;border-bottom:1px solid #2f2f2f;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:10}.logo{width:32px;height:32px;background:#fff;border-radius:50%;display:grid;place-items:center;color:#000;font-weight:900}.title{font-size:14px;font-weight:700}.sub{font-size:11px;opacity:.5}.chat{flex:1;max-width:760px;width:100%;margin:0 auto;padding-bottom:130px}.msg{padding:18px 16px;display:flex;gap:12px}.msg .av{width:28px;height:28px;border-radius:50%;flex:0 0 28px;display:grid;place-items:center;font-size:12px;font-weight:700}.user .av{background:#5436DA;color:#fff}.bot .av{background:#fff;color:#000}.txt{flex:1;line-height:1.7;font-size:15px;white-space:pre-wrap}.welcome{padding:50px 20px;text-align:center}.welcome h2{font-size:26px;margin-bottom:8px}.welcome p{opacity:.6;font-size:14px;margin-bottom:20px}.qs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:500px;margin:0 auto}.qs button{padding:9px 13px;border-radius:20px;border:1px solid #3a3a3a;background:#2f2f2f;color:#ececec;font-size:12px;cursor:pointer}.inp-area{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(transparent,#212121 30%);padding:18px 14px}.inp-box{max-width:760px;margin:0 auto;background:#2f2f2f;border-radius:28px;display:flex;align-items:center;padding:5px 5px 5px 16px;gap:8px;border:1px solid #444}.inp-box input{flex:1;background:transparent;border:none;color:#fff;outline:none;font-size:15px;padding:8px 0}.inp-box button{width:32px;height:32px;border-radius:50%;border:none;background:#fff;color:#000;cursor:pointer}.dot{animation:b 1.4s infinite}.dot:nth-child(2){animation-delay:.2s}.dot:nth-child(3){animation-delay:.4s}@keyframes b{0%,80%,100%{opacity:.2}40%{opacity:1}}</style></head><body><header><div class="logo">తె</div><div><div class="title">మన తెలుగు GPT</div><div class="sub">ChatGPT • 100% తెలుగు • No Login</div></div></header><div class="chat" id="chat"><div class="welcome" id="wel"><h2>నమస్తే మామా! 🙏</h2><p>నేను నీ ChatGPT ని - ఏదైనా అడుగు, తెలుగులో చెప్తా!</p><div class="qs"><button onclick="ask('బ్లాక్ హోల్ అంటే ఏమిటి?')">🌌 బ్లాక్ హోల్</button><button onclick="ask('హైదరాబాదీ బిర్యానీ రెసిపీ చెప్పు')">🍛 బిర్యానీ</button><button onclick="ask('తిరుపతి బాలాజీ చరిత్ర చెప్పు')">🛕 బాలాజీ</button><button onclick="ask('LIC HFL అంటే ఏమిటి?')">🏦 LIC HFL</button></div></div></div><div class="inp-area"><div class="inp-box"><input id="inp" placeholder="Message Mana Telugu GPT..." autocomplete="off"><button onclick="send()">↑</button></div></div><script>
-const chat=document.getElementById('chat'),inp=document.getElementById('inp'),wel=document.getElementById('wel');
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mana Telugu GPT - Universal Free AI</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#212121;color:#ececec;font-family:system-ui;min-height:100vh;display:flex;flex-direction:column}
+header{padding:14px 16px;background:#171717;border-bottom:1px solid #2f2f2f;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:10}
+.logo{width:32px;height:32px;background:#fff;border-radius:50%;display:grid;place-items:center;color:#000;font-weight:900}
+.title{font-size:14px;font-weight:700}.sub{font-size:11px;opacity:.5}
+.chat{flex:1;max-width:780px;width:100%;margin:0 auto;padding-bottom:140px}
+.msg{padding:20px 16px;display:flex;gap:12px;border-bottom:1px solid #ffffff08}
+.av{width:28px;height:28px;border-radius:50%;flex:0 0 28px;display:grid;place-items:center;font-size:12px;font-weight:700}
+.user .av{background:#5436DA;color:#fff}.bot .av{background:#19c37d;color:#fff}
+.txt{flex:1;line-height:1.8;font-size:15px;white-space:pre-wrap;word-break:break-word}
+.welcome{padding:60px 20px;text-align:center}
+.welcome h2{font-size:28px;margin-bottom:10px}
+.welcome p{opacity:.6;font-size:14px}
+.qs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:600px;margin:24px auto}
+.qs button{padding:9px 14px;border-radius:20px;border:1px solid #3a3a3a;background:#2f2f2f;color:#ececec;font-size:12px;cursor:pointer}
+.input-area{position:fixed;bottom:0;left:0;right:0;background:#212121;padding:14px 16px;border-top:1px solid #2f2f2f}
+.input-box{max-width:780px;margin:0 auto;background:#2f2f2f;border-radius:28px;display:flex;align-items:center;padding:6px 6px 6px 18px;gap:8px;border:1px solid #444}
+.input-box input{flex:1;background:transparent;border:none;color:#fff;outline:none;font-size:15px;padding:8px 0}
+.input-box button{width:32px;height:32px;border-radius:50%;border:none;background:#fff;color:#000;cursor:pointer;font-weight:700}
+.typing span{animation:blink 1.4s infinite;opacity:.2}
+.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.2}40%{opacity:1}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">తె</div>
+<div><div class="title">మన తెలుగు GPT - Universal</div><div class="sub">Free for Everyone • Em adigina chepthundi • 100% Telugu</div></div>
+</header>
+
+<div class="chat" id="chat">
+<div class="welcome" id="wel">
+<h2>నమస్తే మామా! 🙏</h2>
+<p>నేను నీ Universal ChatGPT ని - <b>ఎవరు ఏది అడిగినా</b> FREE గా తెలుగులో చెప్తా!</p>
+<div class="qs">
+<button onclick="ask('బ్లాక్ హోల్ అంటే ఏమిటి వివరంగా చెప్పు')">🌌 బ్లాక్ హోల్</button>
+<button onclick="ask('చంద్రయాన్ 3 గురించి చెప్పు')">🚀 చంద్రయాన్</button>
+<button onclick="ask('పైథాన్ లో calculator ఎలా చేయాలి')">💻 కోడింగ్</button>
+<button onclick="ask('అమ్మాయి నచ్చింది ఎలా చెప్పాలి')">❤️ ప్రేమ</button>
+<button onclick="ask('బిర్యానీ రెసిపీ చెప్పు')">🍛 బిర్యానీ</button>
+<button onclick="ask('UPSC ఎలా ప్రిపేర్ అవ్వాలి')">📚 UPSC</button>
+</div>
+</div>
+</div>
+
+<div class="input-area">
+<div class="input-box">
+<input id="inp" placeholder="Em adigina adugu mama - free answer!">
+<button onclick="send()">↑</button>
+</div>
+<p style="text-align:center;font-size:10px;opacity:.3;margin-top:8px">Free AI for Telugu People • No API Key • Unlimited</p>
+</div>
+
+<script>
+const chat=document.getElementById('chat');
+const inp=document.getElementById('inp');
+const wel=document.getElementById('wel');
+
 function ask(t){inp.value=t;send()}
-function add(role,text,html){
-let d=document.createElement('div');d.className='msg '+role;
-d.innerHTML=`<div class="av">${role==='user'?'M':'తె'}</div><div class="txt">${html?text:text.replace(/</g,'&lt;')}</div>`;
-chat.appendChild(d);window.scrollTo(0,document.body.scrollHeight);return d;
+
+function add(role, text, isHTML){
+let div=document.createElement('div');
+div.className='msg '+role;
+div.innerHTML=`<div class="av">${role==='user'?'M':'AI'}</div><div class="txt">${isHTML?text:text.replace(/</g,'&lt;')}</div>`;
+chat.appendChild(div);
+window.scrollTo(0,document.body.scrollHeight);
+return div.querySelector('.txt');
 }
-async function send(){
-let q=inp.value.trim();if(!q)return;
-if(wel)wel.style.display='none';
-add('user',q,false);inp.value='';
-let bot=add('bot','<span class="dot">●</span> <span class="dot">●</span> <span class="dot">●</span>',true);
-let el=bot.querySelector('.txt');
+
+// MAIN UNIVERSAL AI FUNCTION - FREE FOR ALL
+async function getAIAnswer(question){
+let systemPrompt = `You are Mana Telugu GPT - You are exactly like ChatGPT but you answer in Telugu language. You are helpful, friendly, you call user 'mama' sometimes. Answer in Telugu script mainly, mix English for technical words. Give detailed, useful answer like ChatGPT. User asked: ${question}. Answer in Telugu.`;
+
+let encodedPrompt = encodeURIComponent(systemPrompt);
+
+// 3 FREE APIs - try one by one (all free, no key)
+let apis = [
+`https://text.pollinations.ai/${encodedPrompt}?model=openai`,
+`https://text.pollinations.ai/${encodedPrompt}?model=openai-large`,
+`https://api.duckduckgo.com/?q=${encodedPrompt}&format=json`
+];
+
+for(let url of apis){
 try{
-let p=encodeURIComponent(`You are Mana Telugu GPT, you are exactly like ChatGPT. Answer in Telugu language (Telugu script). User: ${q}. Give detailed helpful answer in Telugu like ChatGPT. Use mama word sometimes. Format with bold headings.`);
-let r=await fetch(`https://text.pollinations.ai/${p}?model=openai`,{cache:'no-store'});
-let t=await r.text();
-if(!t||t.length<10||t.includes('"error"')) throw 0;
-el.innerHTML=t.replace(/\*\*(.*?)\*\*/g,'<b>$1</b>').replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>');
+let res = await fetch(url, {cache:'no-store', headers:{'Cache-Control':'no-cache'}});
+let txt = await res.text();
+if(txt && txt.length > 30 && !txt.includes('"error"') && !txt.includes('Model not found')){
+return txt;
+}
+}catch(e){ continue; }
+}
+return null;
+}
+
+async function send(){
+let q=inp.value.trim(); if(!q) return;
+if(wel) wel.style.display='none';
+add('user', q, false);
+inp.value='';
+let botEl = add('bot', '<span class="typing"><span>●</span> <span>●</span> <span>●</span> ChatGPT alochistundi mama...</span>', true);
+
+try{
+let answer = await getAIAnswer(q);
+if(!answer) throw new Error('no answer');
+
+let formatted = answer
+.replace(/\*\*(.*?)\*\*/g,'<b>$1</b>')
+.replace(/\n\n/g,'<br><br>')
+.replace(/\n/g,'<br>');
+
+botEl.innerHTML = formatted;
+
 }catch(e){
-let ql=q.toLowerCase();let ans='';
-if(ql.includes('biryani')||ql.includes('బిర్యానీ')) ans='<b>హైదరాబాదీ దమ్ బిర్యానీ 🍛</b><br><br><b>కావలసినవి:</b><br>• బాస్మతి బియ్యం 1kg<br>• చికెన్/మటన్ 1kg<br>• పెరుగు 400g, ఉల్లిపాయలు 4, బిర్యానీ మసాలా<br><br><b>తయారీ:</b><br>1. మాంసాన్ని పెరుగు, మసాలాతో 2 గంటలు నానబెట్టాలి<br>2. బియ్యం 70% ఉడికించాలి<br>3. దమ్ లో 45 నిమిషాలు LOW flame లో ఉడికించాలి<br>4. నెయ్యి వేసి కలిపి వడ్డించాలి<br><br>🔥 ఘుమఘుమలాడే బిర్యానీ రెడీ మామా!';
-else if(ql.includes('balaji')||ql.includes('బాలాజీ')||ql.includes('tirupati')) ans='<b>తిరుపతి బాలాజీ - శ్రీ వెంకటేశ్వర స్వామి 🛕</b><br><br>తిరుమల తిరుపతి ప్రపంచ ప్రసిద్ధ దేవాలయం మామా!<br><br><b>చరిత్ర:</b><br>• విష్ణువు కలియుగ అవతారం - వెంకటేశ్వర స్వామి<br>• 2000 ఏళ్ల పురాతన ఆలయం, 7 కొండలపై<br>• రోజూ 70,000 మంది దర్శనం<br><br><b>ప్రత్యేకత:</b><br>• నల్లరాతి 8 అడుగుల విగ్రహం, బంగారు ఆభరణాలు<br>• లడ్డూ ప్రసాదం 300 ఏళ్ల నుండి<br>• బ్రహ్మోత్సవాలు సెప్టెంబర్ లో<br><br>🙏 గోవిందా గోవిందా!';
-else if(ql.includes('black')||ql.includes('బ్లాక్')) ans='<b>బ్లాక్ హోల్ అంటే ఏమిటి? 🌌</b><br><br>బ్లాక్ హోల్ అంటే అంతరిక్షంలో అత్యంత శక్తివంతమైన ప్రదేశం!<br><br>పెద్ద నక్షత్రం చనిపోయినప్పుడు దాని గురుత్వాకర్షణ ఎంత పెరుగుతుందంటే కాంత
+// If all APIs fail - show helpful message but still useful
+botEl.innerHTML = `🙏 మామా, <b>"${q}"</b> గురించి network slow valla answer raledu mama!<br><br>
+<b>Malli try chey mama - 1 sec lo vasthundi!</b><br><br>
+Tip: Refresh chesi malli adugu mama - free API kabatti konchem slow avthundi kani pakka vasthundi! 🚀`;
+}
+window.scrollTo(0,document.body.scrollHeight);
+}
+
+inp.addEventListener('keydown',e=>{if(e.key==='Enter')send()});
+</script>
+</body>
+</html>
